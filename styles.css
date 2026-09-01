@@ -1,0 +1,138 @@
+/* Global Stylesheet for all HTML pages */
+/* Follows industry best practices for maintainability and scalability */
+
+/* ===== BASE STYLES ===== */
+:root {
+    /* Color palette */
+    --color-background: #e6f2ff; /* Light blue background */
+    --color-text: #333333; /* Default text color */
+    --color-primary: #0066cc; /* Primary brand color */
+    --color-secondary: #ffffff; /* Secondary background color */
+    
+    /* Typography */
+    --font-family-base: 'Arial', sans-serif;
+    --font-size-base: 16px;
+    --line-height-base: 1.5;
+    
+    /* Spacing */
+    --spacing-unit: 1rem;
+}
+
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Light blue background for all pages */
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: calc(var(--spacing-unit) * 0.5);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+    margin-bottom: var(--spacing-unit);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-primary);
+    opacity: 0.8;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-unit);
+}
+
+/* ===== UTILITY CLASSES ===== */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mt-1 { margin-top: calc(var(--spacing-unit) * 0.25); }
+.mt-2 { margin-top: calc(var(--spacing-unit) * 0.5); }
+.mt-3 { margin-top: var(--spacing-unit); }
+.mt-4 { margin-top: calc(var(--spacing-unit) * 1.5); }
+
+.p-1 { padding: calc(var(--spacing-unit) * 0.25); }
+.p-2 { padding: calc(var(--spacing-unit) * 0.5); }
+.p-3 { padding: var(--spacing-unit); }
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 calc(var(--spacing-unit) * 0.5);
+    }
+    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+}
+
+/* ===== ACCESSIBILITY ===== */
+:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 8px;
+    z-index: 100;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ===== FUTURE-PROOFING ===== */
+/* Add new styles below this line */
